@@ -75,13 +75,45 @@
                           </div>
                         </div>
 
-                        <div class="row mb-0">
+                        <div class="row mb-4">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary w-100">
                                     {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
+
+                        <div class="row mb-3 text-center">
+                          <div class="col-md-6 offset-md-4 text-xs-center">
+                            <div class="btn-group btn-group-toggle mb-1 w-100">
+                              <label class="btn btn-danger btn block">
+                                <a href="{{route('login.google')}}" style="text-decoration:none;color:white;"><i class="fab fa-google"></i></a>
+                              </label>
+                              <label class="btn btn-danger btn-block">
+                                <a href="{{route('login.google')}}" style="text-decoration:none;color:white;">Register with Google</a>
+                              </label>
+                            </div>
+
+                            <div class="btn-group btn-group-toggle mb-1 w-100">
+                              <label class="btn btn-primary btn block">
+                                <a href="{{route('login.facebook')}}" style="text-decoration:none;color:white;"><i class="fab fa-facebook-f"></i></a>
+                              </label>
+                              <label class="btn btn-primary btn-block">
+                                <a href="{{route('login.facebook')}}" style="text-decoration:none;color:white;">Register with Facebook</a>
+                              </label>
+                            </div>
+
+                            <div class="btn-group btn-group-toggle mb-1 w-100">
+                              <label class="btn btn-info btn block">
+                                <a href="{{route('login.linkedin')}}" style="text-decoration:none;color:black;"><i class="fab fa-linkedin-in"></i></a>
+                              </label>
+                              <label class="btn btn-info btn-block">
+                                <a href="{{route('login.linkedin')}}" style="text-decoration:none;color:black;">Register with Linkedin</a>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
                     </form>
                     <script type="text/javascript">
 

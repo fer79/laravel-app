@@ -7,4 +7,24 @@
 - Landing Page
 - Contact us form
 - User Management (Log in, Register, Forgotten Password, Log in with Social Networks)
-- Internal system to process job tickets
+- Internal system to process contacts
+- Internal system to create new users and give permissions
+
+# Technologies - Skills
+
+- PHP (Laravel)
+- MVC Architecture
+- MySQL (Eloquent)
+- GIT & GitHub
+- Javascript (JQuery, AJAX)
+- HTML5
+- CSS3 (Boostrap)
+
+# Configuration to run locally
+
+- Install artisan
+- Install and run database manager (ej. xampp)
+- Create database and insert credentials in .env file
+- Run the next command in a terminal in the project folder: php artisan key:generate
+- Run the next command in a terminal in the project folder: php artisan migrate:fresh
+- Run the next command in a terminal in the project folder: php artisan serve
