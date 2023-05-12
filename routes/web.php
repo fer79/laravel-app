@@ -36,3 +36,6 @@ Route::get('/login/linkedin/callback', [App\Http\Controllers\Auth\LoginControlle
 # Welcome
 Route::get('/contact', 'App\Http\Controllers\ContactController@contact')->name('contact');
 Route::post('/contact/store', 'App\Http\Controllers\ContactController@contactStore')->name('contact.store');
+
+Route::get('/msjMailContact', 'App\Http\Controllers\ContactController@msjMailContact')->name('msjMailContact');
+

@@ -28,3 +28,4 @@
 - Run the next command in a terminal in the project folder: php artisan key:generate
 - Run the next command in a terminal in the project folder: php artisan migrate:fresh
 - Run the next command in a terminal in the project folder: php artisan serve
+- To send emails you must configure the .env file with your mail server credentials

@@ -43,80 +43,127 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
     <body class="antialiased">
-      @include('/layouts/nav-bar')
-      
-      {{-- Contact Us --}}
-
-      <section id="contact" class="bg-dark text-center text-sm-start p-5">
+      <form id="formContacto" method="POST" action="{{ route('contact.store') }}" enctype="multipart/form-data">
+        @csrf
         
-        <div class="container">
-          <div class="d-sm-flex align-items-center justify">
-            <div>
-              <h1 class="text-center mb-5">Contact Us</h1>
-              <p class="lead py-4 text-primary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Integer porttitor ultrices vestibulum. Vestibulum elementum, est a porta congue, arcu risus gravida eros, quis auctor ex eros auctor neque.
-                Mauris tincidunt hendrerit lorem sagittis sagittis. Morbi elementum mi eu ligula ornare tristique.
-                Ut eget magna euismod, ullamcorper diam venenatis, tincidunt augue.
-              </p>
-              <a class="btn btn-primary btn-lg" href="{{ route('contact') }}">Contact</a>
-            </div>
-            <img class="img-fluid w-75 d-none d-sm-block" src="connected_world.svg" alt="CONTACT">
-          </div>
-        </div>
-      </section>
+        <section class="bg-dark text-light d-none-p-5">
+          <div class="container">
+            <div class="row justify-content-center">
+  
+              
+              <a href="{{ env('APP_URL') }}" class="d-none-pb-5">
+                <img class="img-fluid w-25 d-none d-sm-block" src="/laravel-icon.png" alt="Laravel-app">
+                <img class="img-fluid w-25 d-sm-none" src="/laravel-icon-mini.png" alt="Laravel-app">
+              </a>
 
-    {{-- Join our team --}}
+              <div class="d-sm-flex align-items-end">
+                <img src="/contact.svg" class="img-fluid w-100 d-none d-sm-block">
+                <div class="text-dark w-100 p-md-5">
+                  
+                  <div class="card">
+                    <div class="card-header text-center">Contact data</div>
+                    <div class="card-body">
+  
+                      <div class="row mb-3">
+                        <label for="name" class="col-md-3 col-form-label text-md-end">Name</label>
+  
+                        <div class="col-md-9">
+                          <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autofocus placeholder="Name of the person to get in contact" >
+  
+                          @error('name')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                          @enderror
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="email" class="col-md-3 col-form-label text-md-end">E-mail</label>
+  
+                        <div class="col-md-9">
+                          <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" placeholder="Contact e-mail">
+  
+                          @error('email')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                          @enderror
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="phone" class="col-md-3 col-form-label text-md-end">Phone</label>
+  
+                        <div class="col-md-9">
+                          <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" autofocus onkeypress="return /[0-9]/i.test(event.key)" placeholder="Phone number of the contact (only numbers)" >
+  
+                          @error('phone')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                          @enderror
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="company" class="col-md-3 col-form-label text-md-end">Company</label>
+  
+                        <div class="col-md-9">
+                          <input id="company" type="text" class="form-control @error('company') is-invalid @enderror" name="company" value="{{ old('company') }}" autofocus placeholder="Company name (optional)">
+  
+                          @error('company')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                          @enderror
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="messege" class="col-md-3 text-md-end">Messege</label>
+  
+                        <div class="col-md-9">
+                          <textarea id="messege" type="text" rows="3" class="form-control @error('messege') is-invalid @enderror" name="messege" autofocus placeholder="Please briefly detail the reason for your contact and any related queries." >{{ old('messege') }}</textarea>
+  
+                          @error('messege')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                          @enderror
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer text-end">
+  
+                      <div class="row mb-3">
+                        <div class="col-md-8 offset-md-2">
+                          
+                          {!! NoCaptcha::display() !!}
+  
+                          @if ($errors->has('g-recaptcha-response'))
+                            <br>
+                            <span class="help-block" style="color:red">
+                              <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                            </span>
+                          @endif
+                        </div>
+                      </div>
 
-    <section id="team" class="bg-primary text-center text-sm-end p-5">
-      <div class="container">
-        <div class="d-sm-flex align-items-center justify">
-          <img src="/programming.svg" class="img-fluid w-100 d-none d-sm-block">
-          <div class="text-start">
-            <h1 class="text-center mb-5"></h1>
-            <p class="lead py-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Integer porttitor ultrices vestibulum. Vestibulum elementum, est a porta congue, arcu risus gravida eros, quis auctor ex eros auctor neque.
-              Mauris tincidunt hendrerit lorem sagittis sagittis. Morbi elementum mi eu ligula ornare tristique.
-              Ut eget magna euismod, ullamcorper diam venenatis, tincidunt augue. 
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {{-- Our clients --}}
-
-    <section id="clients" class="bg-light text-center text-center py-5">
-      <div class="container">
-        
-        <h1 class="text-center mb-5">Our clients</h1>
-        <div class="row text-center g-4">
-          <div class="col-md">
-            <div class="card text-dark border-0">
-              <div class="card-body text-center">
-                <img src="company-1.png" class="card-img-top py-4">
+                      <div class="row mb-3">
+                        <div class="col-md-8 offset-md-2">
+                          <button id="btn-grabar" type="submit" class="btn btn-outline-success w-100">Send</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md">
-            <div class="card text-dark border-0">
-              <div class="card-body text-center">
-                <img src="company-2.png" class="card-img-top py-4">
-              </div>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="card text-dark border-0">
-              <div class="card-body text-center">
-                <img src="company-3.png" class="card-img-top py-4">
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </section>
+        </section>
+      </form>
+      {!! NoCaptcha::renderJs() !!}
 
     @include('/layouts/footer')
     </body>
