@@ -32,3 +32,7 @@ Route::get('/login/facebook/callback', [App\Http\Controllers\Auth\LoginControlle
 # Linkedin
 Route::get('/login/linkedin', [App\Http\Controllers\Auth\LoginController::class, 'redirectToLinkedin'])->name('login.linkedin');
 Route::get('/login/linkedin/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleLinkedinCallback']);
+
+# Welcome
+Route::get('/contact', 'App\Http\Controllers\ContactController@contact')->name('contact');
+Route::post('/contact/store', 'App\Http\Controllers\ContactController@contactStore')->name('contact.store');

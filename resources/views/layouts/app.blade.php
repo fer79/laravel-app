@@ -41,7 +41,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
-<body>
+<body class="antialiased d-flex flex-column min-vh-100 bg-alpha">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -101,5 +101,6 @@
             @yield('content')
         </main>
     </div>
+    @include('/layouts/footer')
 </body>
 </html>
