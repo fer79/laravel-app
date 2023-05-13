@@ -6,7 +6,7 @@
 
 - Landing Page
 - Contact us form
-- User Management (Log in, Register, Forgotten Password)
+- User Management (Log in, Forgotten Password)
 - Internal system to process contacts
 - Internal system to create new users
 

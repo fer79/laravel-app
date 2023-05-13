@@ -1,5 +1,5 @@
 <div class="table-responsive">
-  <table class="table table-hover table-dark">
+  <table class="table table-bordered table-hover">
     <thead>
       <tr class="table-dark">
         <th class="text-center">Name</th>
@@ -23,10 +23,11 @@
           <td class="text-center">
               @if( empty($row->responded))
                 <div class="btn-group">
-                  <form method="POST" action="{{ route('contact.respond') }}">
+                  <iframe name="hidden_iframe" style="display:none;"></iframe>
+                  <form method="POST" action="{{ route('contact.respond') }}" target="hidden_iframe">
                     @csrf
                     <input type="hidden" name="id" value="{{ $row->id }}">
-                    <button type="submit" class="btn btn-success btn-xs"><i class="fas fa-check-square"></i></button>
+                    <button type="submit" class="btn btn-success btn-xs" onclick="this.disabled=true;this.parentNode.submit();"><i class="fas fa-check-square"></i></button>
                   </form>
                 </div>
               @endif

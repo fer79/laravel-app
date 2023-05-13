@@ -33,7 +33,7 @@
   <section class="bg-alpha text-dark pb-5">
     <div id="table-contacts" class="container">
       <div class="table-responsive">
-        <table class="table table-hover table-dark">
+        <table class="table table-bordered table-hover">
           <thead>
             <tr class="table-dark">
               <th class="text-center">Name</th>

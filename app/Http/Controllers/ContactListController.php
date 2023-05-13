@@ -33,4 +33,10 @@ class ContactListController extends Controller
       echo view('contactList.contactList', compact('data'))->render();
       exit;
     }
+
+    public function contactRespond(Request $request) {
+
+      $contact = contact::whereId($request->id)
+      ->update(['responded' => 'Y']);
+    }
 }
