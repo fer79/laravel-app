@@ -1,4 +1,4 @@
-<footer class="p-5 bg-dark text-light text-center position-relative">
+<footer class="p-5 bg-dark mt-auto text-light text-center position-relative">
   <div class="container">
     <p class="lead">
       <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook h3"></i></a>&nbsp;

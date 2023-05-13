@@ -6,9 +6,9 @@
 
 - Landing Page
 - Contact us form
-- User Management (Log in, Register, Forgotten Password, Log in with Social Networks)
+- User Management (Log in, Register, Forgotten Password)
 - Internal system to process contacts
-- Internal system to create new users and give permissions
+- Internal system to create new users
 
 # Technologies - Skills
 
@@ -25,7 +25,7 @@
 - Install artisan
 - Install and run database manager (ej. xampp)
 - Create database and insert credentials in .env file
-- Run the next command in a terminal in the project folder: php artisan key:generate
 - Run the next command in a terminal in the project folder: php artisan migrate:fresh
 - Run the next command in a terminal in the project folder: php artisan serve
+- If wanted run the command php artisan db:seed to insert rows into some of the tables
 - To send emails you must configure the .env file with your mail server credentials

@@ -39,3 +39,7 @@ Route::post('/contact/store', 'App\Http\Controllers\ContactController@contactSto
 
 Route::get('/msjMailContact', 'App\Http\Controllers\ContactController@msjMailContact')->name('msjMailContact');
 
+# Home
+Route::get('/contacts', 'App\Http\Controllers\ContactListController@contactListHeader')->name('contact.list');
+Route::get('contacts/contactList', [App\Http\Controllers\ContactListController::class, 'contactList']);
+Route::post('/contacts/respond', 'App\Http\Controllers\ContactListController@contactRespond')->name('contact.respond');

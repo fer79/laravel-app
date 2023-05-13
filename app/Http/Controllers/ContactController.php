@@ -22,10 +22,10 @@ class ContactController extends Controller
   public function contactStore(Request $request) {
 
     $request->validate([
-      'name' => ['required', 'string', 'max:255'],
-      'email' => ['required', 'string', 'email', 'max:255'],
-      'phone' => ['required', 'string', 'max:255'],
-      'company' => ['max:255'],
+      'name' => ['required', 'string', 'max:191'],
+      'email' => ['required', 'string', 'email', 'max:191'],
+      'phone' => ['required', 'string', 'max:191'],
+      'company' => ['max:191'],
       'messege' => ['required', 'string', 'max:2000'],
       'g-recaptcha-response' => 'required|captcha',
     ]);

@@ -66,7 +66,7 @@
                                 @endif
                             </div>
                         </div>
-
+                        {{--
                         <div class="row mb-3 text-center">
                           <div class="col-md-6 offset-md-4 text-xs-center">
                             <div class="btn-group btn-group-toggle mb-1 w-100">
@@ -97,6 +97,7 @@
                             </div>
                           </div>
                         </div>
+                        --}}
                     </form>
                 </div>
             </div>
